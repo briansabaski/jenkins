@@ -1,0 +1,7 @@
+<!doctype html>
+
+<body>
+	<h1>Hello world from ECS (Jenkins CI/CD)</h1>
+</body>
+
+</html>
