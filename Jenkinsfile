@@ -7,7 +7,7 @@ pipeline {
         string(name: 'ECS_CLUSTER', defaultValue: 'ecs-lab-cluster')
         string(name: 'ECS_SERVICE', defaultValue: 'nginx-lab-svc')
         string(name: 'TASK_FAMILY', defaultValue: 'nginx-lab-task')
-        string(name: 'ACCOUNT_ID', defaultValue: '597619206075')
+        string(name: 'ACCOUNT_ID', defaultValue: '993184522812')
     }
 
     environment {
