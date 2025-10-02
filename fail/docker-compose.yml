@@ -1,0 +1,27 @@
+services:
+  jenkins:
+    build: .
+    container_name: jenkins
+    ports:
+      - "8088:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home_new:/var/jenkins_home
+      - dind-sock:/var/run/docker.sock  # montar el socket de Docker
+    environment:
+      - DOCKER_HOST=tcp://dind:2375
+    depends_on:
+      - dind
+
+  dind: 
+    image: docker:dind
+    container_name: dind
+    privileged: true
+    command: ["--host=tcp://0.0.0.0:2375", "--host=unix:///var/run/docker.sock", "--tls=false"]
+    volumes:
+      - dind-storage:/var/lib/docker
+
+volumes:
+  jenkins_home_new:
+  dind-storage:
+  dind-sock:
