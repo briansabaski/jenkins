@@ -4,7 +4,7 @@ pipeline {
     parameters {
         string(name: 'AWS_REGION', defaultValue: 'sa-east-1')
         string(name: 'ECR_REPO', defaultValue: 'nginx-ecs-demo')
-        string(name: 'ECS_CLUSTER', defaultValue: 'ecs-lab-cluster')
+        string(name: 'ECS_CLUSTER', defaultValue: 'cluster-aws-jenkins')
         string(name: 'ECS_SERVICE', defaultValue: 'nginx-lab-svc')
         string(name: 'TASK_FAMILY', defaultValue: 'nginx-lab-task')
         string(name: 'ACCOUNT_ID', defaultValue: '993184522812')
